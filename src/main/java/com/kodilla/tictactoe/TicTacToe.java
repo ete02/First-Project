@@ -29,6 +29,7 @@ public class TicTacToe extends Application {
 
     private final Image imageback = new Image("file:src/resources/check-in-grid.png");
     //GridPane odpowiedzialny ze prezentacje planszy
+    // (https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
     private final GridPane board = new GridPane();
     //tablica reprezentujaca uklad na planszy
     private final Field[][] boardFields = new Field[3][3];
@@ -71,10 +72,10 @@ public class TicTacToe extends Application {
         board.setTranslateX(12);
         board.setTranslateY(10);
         board.setGridLinesVisible(true);
-        //wlozenie GridPane planszy w srodek glownego BorderPane
+        //wlożenie GridPane planszy w środek glównego BorderPane
         mainBorderPane.setCenter(board);
 
-        //todo Stworzyc przyciski / labele (np z wynikiem itd.) i dodać do HBox
+        //Stworzyc przyciski / label (np z wynikiem itd.) i dodać do HBox
         HBox buttonsHbox = createTopMenuHbox();
 
         lbResult = new Label();
@@ -86,7 +87,7 @@ public class TicTacToe extends Application {
         mainBorderPane.setTop(buttonsHbox);
 
 
-        //stworzenie pol na planszy
+        //tworzymy pola na planszy
         createBoardFields();
 
         //uzupelnienie GridPane planszy na podstawie tablicy reprezentujacej uklad planszy
@@ -210,7 +211,7 @@ public class TicTacToe extends Application {
         return hbox;
     }
 
-    //todo Metoda, ktora sprawdzi czy gra sie zakonczyla
+    //czy gra sie zakonczyla (todojava)
     private boolean checkGameFinished() {
         if (checkWin(O_SIGN)) {
             showGameOverAlert("gracz");
@@ -254,7 +255,7 @@ public class TicTacToe extends Application {
                     && boardFields[2][i].getImage().equals(image)) {
                 return true;
             }
-            //przekatne
+            //przekątne
             if (boardFields[0][0].getImage().equals(image)
                     && boardFields[1][1].getImage().equals(image)
                     && boardFields[2][2].getImage().equals(image)) {
@@ -270,7 +271,7 @@ public class TicTacToe extends Application {
         return false;
     }
 
-    //todo Metoda, ktora wykona ruch komputera
+    // Metoda todojava (1024KB zakladka)
     private void cpuTurn() {
         System.out.println("Ruch przeciwnika");
 
@@ -280,7 +281,6 @@ public class TicTacToe extends Application {
         } else if (mode.equals(HARD_MODE)) {
             cpuHardTurn();
         }
-
     }
 
     public void cpuEasyTurn() {
@@ -299,7 +299,7 @@ public class TicTacToe extends Application {
         }
     }
 
-    //troche trudniej byc powinno
+    //los
     public void cpuHardTurn() {
         if (boardFields[0][0].getImage().equals(X_SIGN) && boardFields[0][1].getImage().equals(X_SIGN)
                 && boardFields[0][2].getImage().equals(EMPTY)) {
