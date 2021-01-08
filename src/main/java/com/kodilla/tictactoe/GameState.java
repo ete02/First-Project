@@ -1,7 +1,6 @@
 package com.kodilla.tictactoe;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
 
 public class GameState implements Serializable {
     private Field[][] boardFields;
@@ -26,4 +25,4 @@ public class GameState implements Serializable {
             return cpuScore;
         }
     }
-}
+

@@ -22,13 +22,13 @@ import java.util.Random;
 public class TicTacToe extends Application {
 
     public static final Image EMPTY = new Image("empty.png");
-    public static final Image X_SIGN = new Image("x-sign-s.png");
+    public static final Image X_SIGN = new Image("x-sign.png");
     public static final Image O_SIGN = new Image("o-sign-s.png");
     private static final String EASY_MODE = "Easy";
     private static final String HARD_MODE = "Hard";
 
-    private final Image imageback = new Image("file:src/resources/check-in-grid.png");
-    //GridPane odpowiedzialny ze prezentacje planszy
+    private final Image imageback = new Image("check-in-grid.png");
+    //GridPane (okienko siatki) odpowiedzialny ze prezentacje planszy
     // (https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
     private final GridPane board = new GridPane();
     //tablica reprezentujaca uklad na planszy
@@ -151,7 +151,7 @@ public class TicTacToe extends Application {
             }
         });
 
-        alert.setContentText("Gra została zakończona");
+        alert.setContentText("Game over");
 
         alert.show();
     }

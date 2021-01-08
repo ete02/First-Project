@@ -1,11 +1,12 @@
 package com.kodilla.tictactoe;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-import javax.swing.text.html.ImageView;
-import java.awt.*;
 import java.io.Serializable;
 public class Field extends ImageView implements Serializable {
 
-    public void setImage(Image image) {
+    public Field(Image image) {
+        super(image);
     }
-}
+
 }
